@@ -1,0 +1,85 @@
+AGENTS.md
+  s_26371e5e288e05::t_4e211cc5456a24 1-9
+eslint.config.mjs
+  s_ea81f87263984d::t_c409be3409e94d 1-11
+next-env.d.ts
+  s_484499fd14474e::t_6ed2b72f14d51b 1-8
+package-lock.json
+  s_484499fd14474e::t_604d17ee1eb5c3 1-9190
+package.json
+  s_484499fd14474e::t_d56f07df7eb85a 1-58
+src/features/navigation/components/navigation-actions.tsx
+  s_ea81f87263984d::t_d60348ae5d7568 1-15
+src/features/navigation/components/retrospace-brand.tsx
+  s_ea81f87263984d::t_c18c0e05c56926 1-12
+src/features/navigation/components/theme-toggle.tsx
+  s_ea81f87263984d::t_fbdb212afb84e8 1-12
+src/features/navigation/mock-retro-attendance.json
+  s_ea81f87263984d::t_845386d4a1d3e3 1-14
+src/features/work/mock-work-items.json
+  s_183e4733181cc3::t_1b0fd862f6fc8b 1-304
+src/features/work/retro-work-view.tsx
+  s_484499fd14474e::t_5779e1243fd55f 1-1991
+src/features/work/work-item-components.tsx
+  s_484499fd14474e::t_cfc86e35db9213 1-570
+src/features/work/work-item-constants.ts
+  s_484499fd14474e::t_e6576a2290f001 1-2
+src/features/work/work-item-pickers.tsx
+  s_484499fd14474e::t_d9115eb33bfc0d 1-172
+src/pages/_app.tsx
+  s_ea81f87263984d::t_f3e466102eeba7 1-12
+src/pages/_document.tsx
+  s_ea81f87263984d::t_8c7c157e8242b7 1-33
+src/pages/index.tsx
+  s_ea81f87263984d::t_922a789d1acefb 1-19
+src/shared/design-system/atlassian-theme-provider.tsx
+  s_ea81f87263984d::t_53bb51d1f75973 1-90
+src/shared/design-system/color-mode.test.ts
+  s_ea81f87263984d::t_0f27410fe3ab16 1-22
+src/shared/design-system/color-mode.ts
+  s_ea81f87263984d::t_f0a642d4f1cd60 1-14
+src/shared/design-system/retro-modal-parts.tsx
+  s_ea81f87263984d::t_0f0dad652c2d20 1-17
+tsconfig.json
+  s_26371e5e288e05::t_e7a8c5c4d6d53e 1-42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "b9ede48b7038e7a518ecb250d1e423a04193670e",
+  "prompts": {},
+  "sessions": {
+    "s_183e4733181cc3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a19179-2ade-7843-8ea8-4aca8a09ebce",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rajan Panchal <rajan.panchal@jiostar.com>"
+    },
+    "s_26371e5e288e05": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a19139-1d9a-7c61-8ecf-63fafed28fbe",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rajan Panchal <rajan.panchal@jiostar.com>"
+    },
+    "s_484499fd14474e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1a169-8944-71e1-953c-9005e8bee380",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rajan Panchal <rajan.panchal@jiostar.com>"
+    },
+    "s_ea81f87263984d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1917b-8b2e-75d0-82f8-385cb6ac3fa8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rajan Panchal <rajan.panchal@jiostar.com>"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+src/features/work/work-permissions.test.ts
+  s_484499fd14474e::t_6b94f314cdba4a 1-15
+src/shared/design-system/reorderable-table.tsx
+  s_484499fd14474e::t_5192f71f9f83cc 1-89
+src/features/work/work-permissions.ts
+  s_484499fd14474e::t_ff26be7336722e 1-3
+src/features/work/board-layout.ts
+  s_484499fd14474e::t_72dafa682de4c6 4
+  s_484499fd14474e::t_0685a579af350c 1-3
+src/styles/globals.css
+  s_484499fd14474e::t_ac489bcf7636e1 1080,1082,1136-1137
+  s_484499fd14474e::t_5192f71f9f83cc 540-546,1069-1071,1093-1096
+  s_484499fd14474e::t_042c1e650e73ef 1081,1083
+  s_484499fd14474e::t_88bd12fa97db17 1073,1076-1077,1098,1111-1112,1118-1120,1124,1131-1135
+  s_484499fd14474e::t_14ee4432a1082d 1127-1130
+  s_484499fd14474e::t_c89c95a29a6965 1138-1139,1142-1148,1163,1166
+  s_484499fd14474e::t_20c65cacd960b8 1140-1141,1149-1162,1164-1165
+  s_484499fd14474e::t_7893ea7cbd0a9b 1099-1107
+  s_484499fd14474e::t_4ca05236d83c80 1097,1108-1110,1113-1117,1121-1123,1125-1126
+src/features/work/board-layout.test.ts
+  s_484499fd14474e::t_a64236067ec1ba 6,8,10-11
+  s_484499fd14474e::t_fa16032ec52fcc 1-4,7,14-18
+  s_484499fd14474e::t_c89c95a29a6965 5,9,12-13
+src/features/navigation/components/navigation-actions.tsx
+  s_484499fd14474e::t_72dafa682de4c6 6,11,26-27
+  s_484499fd14474e::t_8ce525fde0f02e 28
+src/features/work/use-column-scroll.test.ts
+  s_484499fd14474e::t_458142197e7470 1,3-4,10-23
+  s_484499fd14474e::t_c89c95a29a6965 2,5-9
+src/features/work/work-board.tsx
+  s_484499fd14474e::t_20c65cacd960b8 66,72-76,78-82,98-99,102,119-120,125
+  s_484499fd14474e::t_9ef4b0018c65e8 21-30,109
+  s_484499fd14474e::t_3fa1b4db5e20bb 9,49,108,110-116
+  s_484499fd14474e::t_0685a579af350c 14-16,18,65,71,77,83,91,100-101,103-104
+  s_484499fd14474e::t_042c1e650e73ef 137
+  s_484499fd14474e::t_7477b6b2da006c 13,19,51,56-61,105,121-124,126
+  s_484499fd14474e::t_72dafa682de4c6 45,68
+  s_484499fd14474e::t_8349239c1f6da1 52-55,64,92
+  s_484499fd14474e::t_ff26be7336722e 67,69
+  s_484499fd14474e::t_3d88f474ca77b2 20,50
+src/features/work/use-column-scroll.ts
+  s_484499fd14474e::t_458142197e7470 21
+  s_484499fd14474e::t_0685a579af350c 7-10,13,22,25,48-57
+  s_484499fd14474e::t_bb229f5b8107e2 1-6,11-12,14-20,23-24,26-47,58
+src/shared/design-system/view-preferences.ts
+  s_484499fd14474e::t_72dafa682de4c6 4,10-20,27
+src/features/work/work-item-components.tsx
+  s_484499fd14474e::t_ac489bcf7636e1 43-48,128
+src/features/work/use-board-scroll.ts
+  s_484499fd14474e::t_0685a579af350c 1-44
+src/features/work/retro-work-view.tsx
+  s_484499fd14474e::t_72dafa682de4c6 33,406-408
+  s_484499fd14474e::t_14ee4432a1082d 1205
+  s_484499fd14474e::t_ac489bcf7636e1 11,1356,1360
+  s_484499fd14474e::t_4ca05236d83c80 35,1361-1363,1377,1455
+  s_484499fd14474e::t_5192f71f9f83cc 37,1323-1324
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "1e710cbe91691ff4244d04f261483fb73cd9f7f3",
+  "prompts": {},
+  "sessions": {
+    "s_484499fd14474e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1a169-8944-71e1-953c-9005e8bee380",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rajan Panchal <rajan.panchal@jiostar.com>"
+    }
+  }
+}

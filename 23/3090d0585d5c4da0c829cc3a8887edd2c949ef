@@ -1,0 +1,42 @@
+src/shared/design-system/retro-modal-parts.tsx
+  s_484499fd14474e::t_d1f39ce3d4d446 1,8-16
+  s_484499fd14474e::t_6a7b9c78b0f91d 17
+src/features/work/mock-action-items.json
+  s_484499fd14474e::t_a9cf141b0eb15d 2-4
+src/features/work/work-item-pickers.tsx
+  s_484499fd14474e::t_a9cf141b0eb15d 135-141,155,174
+  s_484499fd14474e::t_4c84b983aa0951 16-24
+src/features/work/retro-session-tools.tsx
+  s_484499fd14474e::t_d1f39ce3d4d446 13,197-200,290-295
+src/features/work/action-items-table.tsx
+  s_484499fd14474e::t_776e2fa6d507d7 253,266,324-330
+  s_484499fd14474e::t_03cd980ccf5ba3 370
+  s_484499fd14474e::t_d1f39ce3d4d446 10,460-471,498-511
+  s_484499fd14474e::t_23028e305c5153 331-333
+src/features/work/work-item-components.tsx
+  s_484499fd14474e::t_776e2fa6d507d7 557
+src/features/work/retro-work-view.tsx
+  s_484499fd14474e::t_0a7983d473f969 1790-1791
+  s_484499fd14474e::t_d1f39ce3d4d446 54,1957,1959-1961,1963,1965-1974,2011-2021
+  s_484499fd14474e::t_449c6a13615885 1788-1789,1792-1821
+  s_484499fd14474e::t_f39f5bc8c0ce67 97-98,540-558
+src/styles/globals.css
+  s_484499fd14474e::t_57792f3ae99c9a 879-880,893-897
+  s_484499fd14474e::t_28754132f35418 281-283
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "233090d0585d5c4da0c829cc3a8887edd2c949ef",
+  "prompts": {},
+  "sessions": {
+    "s_484499fd14474e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1a169-8944-71e1-953c-9005e8bee380",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rajan Panchal <rajan.panchal@jiostar.com>"
+    }
+  }
+}

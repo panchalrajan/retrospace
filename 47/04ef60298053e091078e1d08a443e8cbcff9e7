@@ -1,0 +1,21 @@
+src/styles/globals.css
+  s_484499fd14474e::t_4e7aead55636b6 431-433,464
+src/features/work/action-items-table.tsx
+  s_484499fd14474e::t_3a8a894a706831 439
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "4704ef60298053e091078e1d08a443e8cbcff9e7",
+  "prompts": {},
+  "sessions": {
+    "s_484499fd14474e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1a169-8944-71e1-953c-9005e8bee380",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rajan Panchal <rajan.panchal@jiostar.com>"
+    }
+  }
+}

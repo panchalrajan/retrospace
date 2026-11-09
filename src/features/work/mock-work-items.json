@@ -1,0 +1,304 @@
+[
+  {
+    "key": "RETRO-2401",
+    "title": "The team shipped the billing migration two days ahead of schedule after splitting the rollout into small, reviewable steps and coordinating handoffs across product, engineering, and support.",
+    "createdBy": "Rajan Panchal",
+    "status": "Kudos",
+    "votes": [
+      "Priya Patel",
+      "Marco Silva"
+    ],
+    "description": "The team kept the rollout small and coordinated each handoff across product, engineering, and support.",
+    "comments": [
+      {
+        "id": "comment-2401-1",
+        "author": "Priya Patel",
+        "text": "The smaller rollout steps made progress easier to track.",
+        "createdAt": "2026-10-25T00:00:00Z"
+      },
+      {
+        "id": "comment-2401-2",
+        "author": "Marco Silva",
+        "text": "The handoff notes were useful during support coverage.",
+        "createdAt": "2026-10-25T01:00:00Z"
+      }
+    ]
+  },
+  {
+    "key": "RETRO-2402",
+    "title": "Cross-team reviews caught the API edge cases before release.",
+    "createdBy": "Priya Patel",
+    "status": "Kudos",
+    "votes": [
+      "Ava Chen",
+      "Rajan Panchal"
+    ],
+    "description": "Reviewers paired with the API team before the change reached the release branch.",
+    "comments": [
+      {
+        "id": "comment-2402-1",
+        "author": "Ava Chen",
+        "text": "The early review caught an edge case before release.",
+        "createdAt": "2026-10-26T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "key": "RETRO-2403",
+    "title": "On-call handoffs resolved the payment incident without customer impact.",
+    "createdBy": "Marco Silva",
+    "status": "Kudos",
+    "votes": [
+      "Priya Patel"
+    ],
+    "comments": [
+      {
+        "id": "comment-2403-1",
+        "author": "Nikhil Shah",
+        "text": "The incident channel stayed clear and actionable.",
+        "createdAt": "2026-10-27T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "key": "RETRO-2404",
+    "title": "Pairing sessions helped new engineers navigate unfamiliar service boundaries and gave the team faster, more useful feedback on implementation choices before the changes reached review.",
+    "createdBy": "Ava Chen",
+    "status": "Liked",
+    "votes": [
+      "Mei Tan",
+      "Luis Romero"
+    ],
+    "comments": [
+      {
+        "id": "comment-2404-1",
+        "author": "Luis Romero",
+        "text": "Pairing gave us faster feedback on the tricky service boundary.",
+        "createdAt": "2026-10-28T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "key": "RETRO-2405",
+    "title": "Daily written updates made remote handoffs easy to follow.",
+    "createdBy": "Nikhil Shah",
+    "status": "Liked",
+    "votes": [
+      "Sara Ahmed"
+    ],
+    "comments": [
+      {
+        "id": "comment-2405-1",
+        "author": "Sara Ahmed",
+        "text": "The written updates helped everyone follow along.",
+        "createdAt": "2026-10-29T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "key": "RETRO-2406",
+    "title": "Product and design joined sprint planning early, avoiding rework.",
+    "createdBy": "Sara Ahmed",
+    "status": "Liked",
+    "votes": [],
+    "comments": [
+      {
+        "id": "comment-2406-1",
+        "author": "Daniel Kim",
+        "text": "Planning together saved us from a late scope change.",
+        "createdAt": "2026-10-30T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "key": "RETRO-2407",
+    "title": "A staged rollout exposed a cache issue before the full release.",
+    "createdBy": "Daniel Kim",
+    "status": "Learned",
+    "votes": [
+      "Rajan Panchal",
+      "Ava Chen"
+    ],
+    "comments": [
+      {
+        "id": "comment-2407-1",
+        "author": "Mei Tan",
+        "text": "We should keep the staged rollout checklist for the next migration.",
+        "createdAt": "2026-10-31T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "key": "RETRO-2408",
+    "title": "Smaller review batches made delivery bottlenecks visible sooner.",
+    "createdBy": "Mei Tan",
+    "status": "Learned",
+    "votes": [
+      "Marco Silva"
+    ],
+    "comments": [
+      {
+        "id": "comment-2408-1",
+        "author": "Rajan Panchal",
+        "text": "The cache issue was caught before the full rollout.",
+        "createdAt": "2026-11-01T00:00:00Z"
+      },
+      {
+        "id": "comment-2408-2",
+        "author": "Ava Chen",
+        "text": "Adding a dashboard alert would make this even safer.",
+        "createdAt": "2026-11-01T01:00:00Z"
+      }
+    ]
+  },
+  {
+    "key": "RETRO-2409",
+    "title": "Feature flags let us migrate data safely while backfills ran.",
+    "createdBy": "Luis Romero",
+    "status": "Learned",
+    "votes": [],
+    "comments": [
+      {
+        "id": "comment-2409-1",
+        "author": "Priya Patel",
+        "text": "Smaller batches made the review queue easier to manage.",
+        "createdAt": "2026-11-02T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "key": "RETRO-2410",
+    "title": "Acceptance criteria changed several times after implementation had started, leaving engineering and QA to repeat work and making it difficult to agree on what was ready to ship.",
+    "createdBy": "Rajan Panchal",
+    "status": "Lacked",
+    "votes": [
+      "Priya Patel"
+    ],
+    "comments": [
+      {
+        "id": "comment-2410-1",
+        "author": "Marco Silva",
+        "text": "Lets capture the acceptance criteria before implementation starts.",
+        "createdAt": "2026-11-03T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "key": "RETRO-2411",
+    "title": "Build failures had no clear owner or recovery notes.",
+    "createdBy": "Priya Patel",
+    "status": "Lacked",
+    "votes": [
+      "Daniel Kim",
+      "Mei Tan"
+    ]
+  },
+  {
+    "key": "RETRO-2412",
+    "title": "QA received the release candidate too late in the sprint.",
+    "createdBy": "Marco Silva",
+    "status": "Lacked",
+    "votes": []
+  },
+  {
+    "key": "RETRO-2413",
+    "title": "A dedicated test environment for the billing integration would let the team validate realistic payment and refund scenarios without waiting for shared staging data to be reset.",
+    "createdBy": "Ava Chen",
+    "status": "Longed For",
+    "votes": [
+      "Nikhil Shah",
+      "Sara Ahmed"
+    ]
+  },
+  {
+    "key": "RETRO-2414",
+    "title": "More time to validate analytics before the release.",
+    "createdBy": "Nikhil Shah",
+    "status": "Longed For",
+    "votes": []
+  },
+  {
+    "key": "RETRO-2415",
+    "title": "Earlier input from support on customer-facing changes.",
+    "createdBy": "Sara Ahmed",
+    "status": "Longed For",
+    "votes": [
+      "Ava Chen"
+    ]
+  },
+  {
+    "key": "RETRO-2416",
+    "title": "Add a ten-minute dependency check to sprint planning.",
+    "createdBy": "Daniel Kim",
+    "status": "Start",
+    "votes": [
+      "Rajan Panchal"
+    ]
+  },
+  {
+    "key": "RETRO-2417",
+    "title": "Publish short incident summaries after each on-call rotation.",
+    "createdBy": "Mei Tan",
+    "status": "Start",
+    "votes": []
+  },
+  {
+    "key": "RETRO-2418",
+    "title": "Automate smoke checks for the main upgrade paths so the team can catch configuration and compatibility regressions before a release candidate is handed over to QA.",
+    "createdBy": "Luis Romero",
+    "status": "Start",
+    "votes": [
+      "Marco Silva",
+      "Priya Patel"
+    ]
+  },
+  {
+    "key": "RETRO-2419",
+    "title": "Stop carrying unresolved blockers across multiple standups.",
+    "createdBy": "Rajan Panchal",
+    "status": "Stop",
+    "votes": []
+  },
+  {
+    "key": "RETRO-2420",
+    "title": "Stop merging large changes without a staged rollout plan.",
+    "createdBy": "Priya Patel",
+    "status": "Stop",
+    "votes": [
+      "Marco Silva"
+    ]
+  },
+  {
+    "key": "RETRO-2421",
+    "title": "Stop scheduling releases before support reviews the runbook.",
+    "createdBy": "Marco Silva",
+    "status": "Stop",
+    "votes": []
+  },
+  {
+    "key": "RETRO-2422",
+    "title": "Keep pairing on unfamiliar areas of the codebase, especially during migrations, so context is shared early and implementation decisions do not get trapped with one person.",
+    "createdBy": "Ava Chen",
+    "status": "Continue",
+    "votes": [
+      "Mei Tan"
+    ]
+  },
+  {
+    "key": "RETRO-2423",
+    "title": "Continue sharing demo builds with support before launch.",
+    "createdBy": "Nikhil Shah",
+    "status": "Continue",
+    "votes": [
+      "Rajan Panchal",
+      "Luis Romero"
+    ]
+  },
+  {
+    "key": "RETRO-2424",
+    "title": "Keep writing rollout steps alongside implementation.",
+    "createdBy": "Sara Ahmed",
+    "status": "Continue",
+    "votes": []
+  }
+]

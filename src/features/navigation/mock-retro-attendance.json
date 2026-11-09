@@ -1,0 +1,14 @@
+{
+  "sessionStartedAt": "2026-10-31T14:00:00Z",
+  "attendees": [
+    { "name": "Ava Chen", "joinedAt": "2026-10-31T14:00:00Z", "presence": "active" },
+    { "name": "Daniel Kim", "joinedAt": "2026-10-31T14:02:00Z", "presence": "active" },
+    { "name": "Luis Romero", "joinedAt": "2026-10-31T14:04:00Z", "presence": "active" },
+    { "name": "Marco Silva", "joinedAt": "2026-10-31T14:12:00Z", "presence": "active" },
+    { "name": "Mei Tan", "joinedAt": "2026-10-31T14:15:00Z", "presence": "active" },
+    { "name": "Nikhil Shah", "joinedAt": "2026-10-31T14:21:00Z", "presence": "active" },
+    { "name": "Priya Patel", "joinedAt": "2026-10-31T14:00:00Z", "presence": "active" },
+    { "name": "Rajan Panchal", "joinedAt": "2026-10-31T14:01:00Z", "presence": "active" },
+    { "name": "Sara Ahmed", "joinedAt": "2026-10-31T14:07:00Z", "leftAt": "2026-10-31T14:46:00Z", "presence": "left" }
+  ]
+}

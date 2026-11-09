@@ -1,0 +1,68 @@
+{
+  "name": "retrospace-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@atlaskit/avatar": "^30.0.5",
+    "@atlaskit/avatar-group": "^14.4.8",
+    "@atlaskit/badge": "^22.0.0",
+    "@atlaskit/button": "25.6.1",
+    "@atlaskit/checkbox": "^19.3.1",
+    "@atlaskit/comment": "^14.2.6",
+    "@atlaskit/css-reset": "8.4.8",
+    "@atlaskit/date-label": "^1.2.5",
+    "@atlaskit/datetime-picker": "^19.4.2",
+    "@atlaskit/drawer": "^14.3.9",
+    "@atlaskit/dropdown-menu": "^21.0.5",
+    "@atlaskit/dynamic-table": "^19.3.8",
+    "@atlaskit/empty-state": "^12.2.4",
+    "@atlaskit/flag": "^19.0.3",
+    "@atlaskit/heading": "^8.0.0",
+    "@atlaskit/icon": "38.0.1",
+    "@atlaskit/inline-edit": "^16.5.0",
+    "@atlaskit/lozenge": "^17.0.6",
+    "@atlaskit/modal-dialog": "^17.2.0",
+    "@atlaskit/navigation-system": "11.4.3",
+    "@atlaskit/platform-feature-flags": "2.2.1",
+    "@atlaskit/pragmatic-drag-and-drop": "^4.0.0",
+    "@atlaskit/primitives": "^22.6.0",
+    "@atlaskit/select": "^23.1.5",
+    "@atlaskit/tag": "^17.0.3",
+    "@atlaskit/textarea": "^10.3.0",
+    "@atlaskit/textfield": "^10.3.0",
+    "@atlaskit/tokens": "20.8.2",
+    "@atlaskit/tooltip": "^24.4.3",
+    "next": "16.4.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "16.4.3",
+    "typescript": "^5.9.0",
+    "vitest": "5.0.5"
+  },
+  "overrides": {
+    "@atlaskit/analytics-next-stable-react-context": {
+      "react": "^18.2.0"
+    },
+    "minimatch": "^11.0.1"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "allowScripts": {
+    "unrs-resolver@1.12.2": true
+  }
+}

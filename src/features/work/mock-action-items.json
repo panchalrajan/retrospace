@@ -1,0 +1,6 @@
+[
+  { "id": "ACTION-01", "title": "Add a pre-release checklist to the billing rollout runbook", "owner": "Priya Patel", "dueDate": "2026-11-03", "done": false },
+  { "id": "ACTION-02", "title": "Schedule a short support handoff before the next launch", "owner": "Marco Silva", "dueDate": "2026-11-04", "done": false },
+  { "id": "ACTION-03", "title": "Share the API edge-case review notes with the team", "owner": "Daniel Kim", "dueDate": "2026-11-06", "done": true },
+  { "id": "ACTION-04", "title": "Document rollback ownership for staged releases", "owner": "Rajan Panchal", "dueDate": "2026-11-10", "done": false }
+]

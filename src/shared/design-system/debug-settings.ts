@@ -29,6 +29,12 @@ export function useHideMockData() {
   return useSyncExternalStore(subscribe, getHideMockData, () => false);
 }
 
+let accountStorageId: string | null = null;
+export function setWorkStorageAccount(id: string | null) { accountStorageId = id; }
+export function scopeWorkStorageKey(key: string, id: string | null, empty: boolean) {
+  const scoped = empty ? `debug-empty:${key}` : key;
+  return id ? `account:${id}:${scoped}` : scoped;
+}
 export function getWorkStorageKey(key: string) {
-  return getHideMockData() ? `debug-empty:${key}` : key;
+  return scopeWorkStorageKey(key, accountStorageId, getHideMockData());
 }

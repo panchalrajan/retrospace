@@ -16,3 +16,15 @@ describe("board columns", () => {
     expect(getBoardColumnWidth(240, 16)).toBe(240);
   });
 });
+
+describe("homepage demo sizing", () => {
+  it("fits two readable demo columns without narrowing workspace defaults", () => {
+    const available = 560;
+    expect(getBoardColumnWidth(available, 12, 2, 240)).toBe(274);
+    expect(getBoardColumnWidth(available, 12, 2)).toBe(560);
+  });
+  it("keeps a complete column on narrow screens and returns to two when space allows", () => {
+    expect(getBoardColumnWidth(298, 12, 2, 240)).toBe(298);
+    expect(getBoardColumnWidth(492, 12, 2, 240)).toBe(240);
+  });
+});

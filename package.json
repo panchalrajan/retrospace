@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint .",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:collaboration": "node scripts/qa-collaboration.mjs",
+    "test:guest-account": "node scripts/qa-guest-account.mjs"
   },
   "dependencies": {
     "@atlaskit/avatar": "^30.0.5",
@@ -40,6 +42,8 @@
     "@atlaskit/textfield": "^10.3.0",
     "@atlaskit/tokens": "20.8.2",
     "@atlaskit/tooltip": "^24.4.3",
+    "@supabase/ssr": "0.12.7",
+    "@supabase/supabase-js": "2.119.0",
     "next": "16.4.3",
     "react": "18.3.1",
     "react-dom": "18.3.1"
@@ -50,6 +54,7 @@
     "@types/react-dom": "^18.3.0",
     "eslint": "^9.0.0",
     "eslint-config-next": "16.4.3",
+    "playwright": "1.64.1",
     "typescript": "^5.9.0",
     "vitest": "5.0.5"
   },

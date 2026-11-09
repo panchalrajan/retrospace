@@ -144,7 +144,9 @@ export function WorkItemEngagement({
   countControl,
   active,
   compact = false,
+  isDisabled = false,
 }: {
+  isDisabled?: boolean;
   icon: ReactChild;
   actionLabel: string;
   count: number;
@@ -163,6 +165,7 @@ export function WorkItemEngagement({
         aria-label={actionLabel}
         aria-pressed={active}
         onClick={onAction}
+        isDisabled={isDisabled}
       />
       {count > 0 ? compact ? <span className="work-engagement-count-segment">{countControl}</span> : countControl : null}
     </span>
@@ -175,7 +178,11 @@ export function VoteControl({
   currentUser,
   onToggle,
   compact = true,
+  voterNames = {},
+  isDisabled = false,
 }: {
+  isDisabled?: boolean;
+  voterNames?: Record<string, string>;
   ticketId: string;
   votes: string[];
   currentUser: string;
@@ -188,6 +195,7 @@ export function VoteControl({
       icon={<ThumbsUpIcon label="" size={compact ? "small" : "medium"} />}
       actionLabel={`${votes.includes(currentUser) ? "Remove upvote from" : "Upvote"} ${ticketId}`}
       count={votes.length}
+      isDisabled={isDisabled}
       onAction={onToggle}
       active={votes.includes(currentUser)}
       countControl={
@@ -216,8 +224,8 @@ export function VoteControl({
             {votes.map((voter) => (
               <DropdownItem key={voter} isDisabled>
                 <span className="vote-person">
-                  <UserAvatar name={voter} />
-                  {voter}
+                  <UserAvatar name={voterNames[voter] ?? voter} />
+                  {voterNames[voter] ?? voter}
                 </span>
               </DropdownItem>
             ))}

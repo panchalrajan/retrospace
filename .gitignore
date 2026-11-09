@@ -8,6 +8,16 @@ coverage/
 .vercel/
 .DS_Store
 *.tsbuildinfo
+/spec.md
+
+# Local agent and Spec Kit configuration/artifacts
+.agents/
+.codex/
+.specify/
+specs/
+skills-lock.json
+/AGENTS.md
+/.mcp.json
 
 # Local environment and credentials
 .env*
@@ -19,3 +29,10 @@ coverage/
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
+
+# Local collaboration QA output
+.qa/
+
+# Supabase CLI local state (keep migrations and tests tracked)
+supabase/.temp/
+supabase/.branches/

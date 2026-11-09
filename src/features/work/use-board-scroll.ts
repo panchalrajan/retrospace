@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { getBoardColumnWidth } from "./board-layout";
 
-export function useBoardScroll(content: ReactNode, visibleColumns: number) {
+export function useBoardScroll(content: ReactNode, visibleColumns: number, minimumColumnWidth = 300) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const stepRef = useRef(1);
   const [range, setRange] = useState({ first: 0, visible: 0, total: 0 });
@@ -21,7 +21,7 @@ export function useBoardScroll(content: ReactNode, visibleColumns: number) {
       const gap = Number.parseFloat(style.columnGap) || 0;
       const width = element.clientWidth - (Number.parseFloat(style.paddingLeft) || 0) - (Number.parseFloat(style.paddingRight) || 0);
       const index = Math.round(element.scrollLeft / stepRef.current);
-      const columnWidth = getBoardColumnWidth(width, gap, visibleColumns);
+      const columnWidth = getBoardColumnWidth(width, gap, visibleColumns, minimumColumnWidth);
       element.style.setProperty("--board-column-width", `${columnWidth}px`);
       stepRef.current = columnWidth + gap;
       element.scrollLeft = index * stepRef.current;
@@ -32,7 +32,7 @@ export function useBoardScroll(content: ReactNode, visibleColumns: number) {
     observer.observe(element);
     element.addEventListener("scroll", update, { passive: true });
     return () => { observer.disconnect(); element.removeEventListener("scroll", update); };
-  }, [content, visibleColumns]);
+  }, [content, visibleColumns, minimumColumnWidth]);
 
   function scrollPage(direction: -1 | 1) {
     scrollRef.current?.scrollTo({

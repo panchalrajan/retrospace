@@ -15,6 +15,8 @@ import ArrowDownIcon from "@atlaskit/icon/core/arrow-down";
 import ArrowUpIcon from "@atlaskit/icon/core/arrow-up";
 import ArrowLeftIcon from "@atlaskit/icon/core/arrow-left";
 import ArrowRightIcon from "@atlaskit/icon/core/arrow-right";
+import ThumbsUpIcon from "@atlaskit/icon/core/thumbs-up";
+import CommentIcon from "@atlaskit/icon/core/comment";
 import PinIcon from "@atlaskit/icon/core/pin-filled";
 import { VoteControl, CommentsControl, type WorkComment } from "./work-item-components";
 import { useBoardScroll } from "./use-board-scroll";
@@ -68,8 +70,17 @@ function ScrollCue({ direction, remaining, onClick, label }: {
   </div>;
 }
 
-export function WorkBoard({ children, actions }: { children: ReactNode; actions?: ReactNode }) {
-  const { scrollRef, first, visible, total, scrollPage } = useBoardScroll(children, actions ? 3 : 4);
+type WorkBoardProps = {
+  children: ReactNode; actions?: ReactNode; visibleColumns?: number; minimumColumnWidth?: number; readOnly?: boolean;
+};
+export function WorkBoard({ readOnly = false, ...props }: WorkBoardProps) {
+  if (readOnly) return <section className="work-board-preview" aria-label="Sample retrospective board"><div className="work-board-preview-grid">{props.children}</div></section>;
+  return <InteractiveWorkBoard {...props} />;
+}
+function InteractiveWorkBoard({ children, actions, visibleColumns, minimumColumnWidth = 300 }: {
+  children: ReactNode; actions?: ReactNode; visibleColumns?: number; minimumColumnWidth?: number;
+}) {
+  const { scrollRef, first, visible, total, scrollPage } = useBoardScroll(children, visibleColumns ?? (actions ? 3 : 4), minimumColumnWidth);
   return <section aria-label="Retro board" className={`work-board-section${actions ? " work-board-section--with-actions" : ""}`}>
     <div className={`work-board-layout${actions ? " work-board-layout--with-actions" : ""}`}>
       <div className="work-board-scroll-shell">
@@ -83,8 +94,18 @@ export function WorkBoard({ children, actions }: { children: ReactNode; actions?
   </section>;
 }
 
-export function WorkBoardColumn({ title, count, children, onCreate, pinned = false, emptyState }: {
-  title: string; count: number; children: ReactNode; onCreate: () => void; pinned?: boolean; emptyState?: ReactNode;
+type ColumnContent = { title: string; count: number; children: ReactNode; pinned?: boolean; emptyState?: ReactNode; canCreate?: boolean };
+type WorkBoardColumnProps = ColumnContent & ({ readOnly: true; onCreate?: never } | { readOnly?: false; onCreate: () => void });
+export function WorkBoardColumn(props: WorkBoardColumnProps) {
+  const headingId = useId();
+  if (props.readOnly) return <Box as="section" xcss={columnStyles} data-preview-column data-board-column aria-labelledby={headingId}>
+    <div className="work-preview-column-heading"><h3 id={headingId}>{props.title}</h3><Badge>{props.count}</Badge></div>
+    <div className="work-preview-column-cards">{props.children}</div>
+  </Box>;
+  return <InteractiveWorkBoardColumn {...props} />;
+}
+function InteractiveWorkBoardColumn({ title, count, children, onCreate, pinned = false, emptyState, canCreate = true }: {
+  title: string; count: number; children: ReactNode; onCreate: () => void; pinned?: boolean; emptyState?: ReactNode; canCreate?: boolean;
 }) {
   const headingId = useId();
   const { scrollRef, hasOverflow, remaining, above, scrollToNext, scrollToPrevious } = useColumnScroll(children);
@@ -93,7 +114,7 @@ export function WorkBoardColumn({ title, count, children, onCreate, pinned = fal
       {pinned && <Tooltip content="Pinned action items"><span className="work-board-pin"><PinIcon label="Pinned" color="var(--ds-icon-brand)" size="small" /></span></Tooltip>}
       <Heading size="small" as="h3" id={headingId}>{title}</Heading>
       <Badge>{count}</Badge>
-      <Button appearance="subtle" spacing="compact" iconBefore={<AddIcon label="" />} aria-label={`Add to ${title}`} onClick={onCreate} />
+      {canCreate && <Button appearance="subtle" spacing="compact" iconBefore={<AddIcon label="" />} aria-label={`Add to ${title}`} onClick={onCreate} />}
     </div>
     <div className="work-column-scroll-shell">
       {hasOverflow && <ScrollCue direction="up" remaining={above} label={`Scroll up: ${above} more ${title} items`} onClick={scrollToPrevious} />}
@@ -105,9 +126,9 @@ export function WorkBoardColumn({ title, count, children, onCreate, pinned = fal
           headingSize="xsmall"
           width="narrow"
           description={title === "Action items" ? "Capture a clear next step with an owner and due date." : "Share a reflection to start the conversation with your team."}
-          primaryAction={<Button appearance="primary" spacing="compact" iconBefore={<AddIcon label="" />} onClick={onCreate}>
+          primaryAction={canCreate ? <Button appearance="primary" spacing="compact" iconBefore={<AddIcon label="" />} onClick={onCreate}>
             {title === "Action items" ? "Create action item" : "Add reflection"}
-          </Button>}
+          </Button> : undefined}
         />}
       </div>}
     </div>
@@ -116,9 +137,21 @@ export function WorkBoardColumn({ title, count, children, onCreate, pinned = fal
   </Box>;
 }
 
-export function WorkItemCard({ id, title, person, personLabel,
-  statusControl, dueDateControl, votes, comments, currentUser, onVote, onComments, onEdit, onDelete }: {
-  id: string; title: string; person: string; personLabel: string;
+type CardContent = { id: string; title: string; person: string; personLabel: string; votes: string[]; comments: WorkComment[]; statusControl?: ReactNode; dueDateControl?: ReactNode };
+type CardActions = { canEdit?: boolean; canVote?: boolean; voterNames?: Record<string, string>; currentUser: string; onVote: () => void; onComments: () => void; onEdit: () => void; onDelete?: () => void };
+type WorkItemCardProps = CardContent & ({ readOnly: true } | ({ readOnly?: false } & CardActions));
+export function WorkItemCard(props: WorkItemCardProps) {
+  const headingId = useId();
+  if (props.readOnly) return <Box as="article" xcss={cardStyles} data-preview-card data-work-card aria-labelledby={headingId}>
+    <span className="work-preview-card-id">{props.id}</span>
+    <p id={headingId} className="work-preview-card-title">{props.title}</p>
+    <div className="work-preview-card-footer"><span aria-label={`${props.personLabel}: ${props.person}`}><UserAvatar name={props.person} /></span><span className="work-preview-card-metrics"><span aria-label={`${props.votes.length} votes`}><ThumbsUpIcon label="" size="small" />{props.votes.length}</span><span aria-label={`${props.comments.length} comments`}><CommentIcon label="" size="small" />{props.comments.length}</span></span></div>
+  </Box>;
+  return <InteractiveWorkItemCard {...props} />;
+}
+function InteractiveWorkItemCard({ id, title, person, personLabel,
+  statusControl, dueDateControl, votes, comments, currentUser, voterNames, canEdit = true, canVote = true, onVote, onComments, onEdit, onDelete }: {
+  id: string; title: string; person: string; personLabel: string; voterNames?: Record<string, string>; canEdit?: boolean; canVote?: boolean;
   statusControl?: ReactNode; dueDateControl?: ReactNode; votes: string[]; comments: WorkComment[]; currentUser: string;
   onVote: () => void; onComments: () => void; onEdit: () => void; onDelete?: () => void;
 }) {
@@ -128,7 +161,7 @@ export function WorkItemCard({ id, title, person, personLabel,
     <Inline alignBlock="center" spread="space-between" space="space.050">
       <Button appearance="link" spacing="none" onClick={onEdit}>{id}</Button>
       <span className="work-item-card-actions">
-        <Button className="work-icon-action" appearance="subtle" spacing="compact" iconBefore={<EditIcon label="" size="small" />} aria-label={`Edit ${id}`} onClick={onEdit} />
+        {canEdit && <Button className="work-icon-action" appearance="subtle" spacing="compact" iconBefore={<EditIcon label="" size="small" />} aria-label={`Edit ${id}`} onClick={onEdit} />}
         {onDelete && <Button className="work-delete-action work-icon-action" appearance="subtle" spacing="compact" iconBefore={<DeleteIcon label="" size="small" />} aria-label={`Delete ${id}`} onClick={onDelete} />}
       </span>
     </Inline>
@@ -141,7 +174,7 @@ export function WorkItemCard({ id, title, person, personLabel,
         <span className="work-item-card-avatar" tabIndex={0} aria-label={`${personLabel}: ${person}`}><UserAvatar name={person} /></span>
       </Tooltip>
       <div className="work-item-card-engagement">
-      <VoteControl compact ticketId={id} votes={votes} currentUser={currentUser} onToggle={onVote} />
+      <VoteControl compact ticketId={id} votes={votes} currentUser={currentUser} voterNames={voterNames} isDisabled={!canVote} onToggle={onVote} />
       <CommentsControl compact ticketId={id} comments={comments} onOpen={onComments} />
       </div>
     </div>
